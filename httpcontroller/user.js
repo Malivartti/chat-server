@@ -10,7 +10,7 @@ router.route('/')
     const { email } = req.body;
     const isGood = isNewMail(email);
     if (isGood) {
-      let token = jwt.sign({email: 'fhfh'}, process.env.JWT_SECRET);
+      let token = jwt.sign({ email }, process.env.JWT_SECRET);
       token = token.slice(-20)
       
       transporter.sendMail(getMailData(email, token), async (err, info) => {
