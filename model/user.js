@@ -2,7 +2,7 @@ const { mongoose } = require('../module/db')
 
 const UserSchema = new mongoose.Schema({
   email: String,
-  username: {type: String, default: ''},
+  name: {type: String, default: ''},
   token: String,
 })
 

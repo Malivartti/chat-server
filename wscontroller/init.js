@@ -39,8 +39,8 @@ async function init(ws, data, clients) {
   for (const key in clients) {
     clients[key].send(JSON.stringify({
       status: 'join',
-      user: user._id,
-      username: user.username,
+      userId: user._id,
+      userName: user.name,
       text: `присоединился`
     }))
   }

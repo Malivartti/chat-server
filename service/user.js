@@ -20,8 +20,8 @@ async function getUserById(id) {
   return await User.find({_id: id})
 }
 
-async function updateUsername(token, username) {
-  return await User.findOneAndUpdate({token}, {username})
+async function updateName(token, name) {
+  return await User.findOneAndUpdate({token}, {name})
 }
 
 module.exports = {
@@ -29,5 +29,5 @@ module.exports = {
   createUser,
   getUserByToken,
   getUserById,
-  updateUsername
+  updateName
 }

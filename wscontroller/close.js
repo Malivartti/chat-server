@@ -6,8 +6,8 @@ function handleClose(token, clients, user) {
   for (const key in clients) {
     clients[key].send(JSON.stringify({
       status: 'left',
-      user: user._id,
-      username: user.username,
+      userId: user._id,
+      userName: user.name,
       text: `вышел`
     }))
   }

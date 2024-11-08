@@ -6,7 +6,7 @@ function formatDateNumber(number) {
 }
 
 function formatDate(date) {
-  return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} ${formatDateNumber(date.getHours())}:${formatDateNumber(date.getMinutes())}`
+  return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()} ${formatDateNumber(date.getHours())}:${formatDateNumber(date.getMinutes())}`
 }
 
 module.exports = {

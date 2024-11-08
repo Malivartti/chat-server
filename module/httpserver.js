@@ -10,7 +10,7 @@ app.use(express.json())
 app.use('/api/user', require('../httpcontroller/user'))
 app.use('/api/messages', require('../httpcontroller/message'))
 app.use((req, res) => {
-  res.status(404).json({error: 404, message: "Page not found"});
+  res.status(404).json({error: 404, message: `Page ${req.url} not found`});
 })
 
 function runHTTPServer() {

@@ -6,7 +6,7 @@ async function handleMessage(message, clients, user) {
 
   const created_at = formatDate(new Date())
   const sendMessage = {
-    user: user._id,
+    userId: user._id,
     text: message,
     created_at,
   }
@@ -16,7 +16,7 @@ async function handleMessage(message, clients, user) {
     clients[key].send(JSON.stringify({
       ...sendMessage,
       status: 'message',
-      username: user.username
+      userName: user.name
     }));
   }
 }
