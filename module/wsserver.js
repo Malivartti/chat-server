@@ -12,16 +12,16 @@ function runWSServer() {
   console.log(`WS server listening on port ${port}`)
 
   webSocketServer.on('connection', async function(ws, data) {
-  const { user, token } = await handleInit(ws, data, clients)
+    const { user, token } = await handleInit(ws, data, clients)
 
-  ws.on('message', async function(message) {
-    await handleMessage(message, clients, user)
-  });
+    ws.on('message', async function(message) {
+      await handleMessage(message, clients, user)
+    });
 
-  ws.on('close', function() {
-    handleClose(token, clients, user)
+    ws.on('close', function() {
+      handleClose(token, clients, user)
+    });
   });
-});
 }
 
 module.exports = {
